@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alexdropbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alexdropbox
+  template:
+    metadata:
+      labels:
+        app: alexdropbox
+    spec:
+      hostname: alex-dropbox
+      containers:
+        - name: alexdropbox
+          image: alex-dropbox:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: TITLE
+              value: "Alex Dropbox"
+            - name: LOGO
+              value: "Url"
+            - name: GALLERY_COLUMNS
+              value: "4"
+            - name: GALLERY_ALLOWED_FILE_TYPES
+              value: ".jpg,.jpeg,.png,.mp4,.mov"
+            - name: GALLERY_MAX_FILE_SIZE_MB
+              value: "100"
+            - name: GALLERY_SECRET_KEY
+              value: "supersecretkey"
+
+          volumeMounts:
+            - name: config
+              mountPath: /app/config
+            - name: thumbnails
+              mountPath: /app/wwwroot/thumbnails
+            - name: uploads
+              mountPath: /app/wwwroot/uploads
+
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: weddingshare-config
+        - name: thumbnails
+          persistentVolumeClaim:
+            claimName: weddingshare-thumbnails
+        - name: uploads
+          persistentVolumeClaim:
+            claimName: weddingshare-uploads
