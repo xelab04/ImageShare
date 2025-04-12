@@ -15,7 +15,7 @@ spec:
       hostname: alex-dropbox
       containers:
         - name: alexdropbox
-          image: alex-dropbox:latest
+          image: registry.alexbissessur.dev/alex-dropbox:latest
           ports:
             - containerPort: 5000
           env:
