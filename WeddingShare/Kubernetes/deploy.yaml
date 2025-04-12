@@ -31,6 +31,16 @@ spec:
               value: "100"
             - name: GALLERY_SECRET_KEY
               value: "supersecretkey"
+            - name: ACCOUNT_ADMIN_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: alexdropbox-secrets
+                  key: admin-username
+            - name: ACCOUNT_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: alexdropbox-secrets
+                  key: admin-password
 
           volumeMounts:
             - name: config
