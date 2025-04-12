@@ -47,7 +47,7 @@
     {
         culture = Context?.Session?.GetString(SessionKey.SelectedLanguage)?.Trim();
         if (string.IsNullOrEmpty(culture))
-        { 
+        {
             culture = WeddingShare.Configurations.LocalizationConfiguration.CurrentCulture;
         }
     }
@@ -64,9 +64,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        
+
         <title>@title</title>
-        
+
         <link rel="icon" type="image/png" href="@logo" />
         <link rel="stylesheet" href="~/css/bootstrap-icons.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/template.css" asp-append-version="true" />
@@ -81,7 +81,7 @@
         {
             <link rel="stylesheet" href="~/css/themes/@(theme).css" asp-append-version="true" />
         }
-        
+
         <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
         <script src="~/lib/jquery-loading/jquery.loading.min.js" asp-append-version="true"></script>
@@ -100,10 +100,9 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container px-3 px-lg-5 @(viewMode == ViewMode.Presentation || viewMode == ViewMode.Slideshow ? "justify-content-center" : string.Empty)">
                 <a class="navbar-brand" href="@(_config.GetOrDefault("Settings:Home_Link", true) ? "/" : "#")">
-                    <img class="navbar-logo" src="@logo" />
                     <span class="navbar-title">@title</span>
                 </a>
-                
+
                 @if (viewMode != ViewMode.Presentation && viewMode != ViewMode.Slideshow)
                 {
                     <div class="presentation-hidden">
@@ -170,7 +169,7 @@
                 }
             </div>
         </nav>
-        
+
         <!-- Body -->
         <div id="main-wrapper">
             @{
@@ -222,7 +221,7 @@
                 </p>
             </div>
         </footer>
-        
+
         <!-- JS -->
         @await RenderSectionAsync("Scripts", required: false)
 

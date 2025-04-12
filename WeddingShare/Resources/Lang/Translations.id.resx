@@ -212,7 +212,7 @@
     <value>Silakan masukkan kunci rahasia.</value>
   </data>
   <data name="Gallery_Key_Placeholder" xml:space="preserve">
-    <value>wedding-day</value>
+    <value>secret-code</value>
   </data>
   <data name="Gallery_List_Failed" xml:space="preserve">
     <value>Gagal mendapatkan daftar galeri</value>

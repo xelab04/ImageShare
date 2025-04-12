@@ -227,7 +227,7 @@
     <value>Lütfen ziyaret etmek istediğiniz galerinin adını girin.</value>
   </data>
   <data name="Gallery_Name_Placeholder" xml:space="preserve">
-    <value>my-wedding-gallery</value>
+    <value>gallery</value>
   </data>
   <data name="Gallery_Selector_Title" xml:space="preserve">
     <value>Gallery Selector</value>
