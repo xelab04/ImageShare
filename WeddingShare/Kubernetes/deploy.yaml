@@ -13,6 +13,8 @@ spec:
         app: alexdropbox
     spec:
       hostname: alex-dropbox
+      imagePullSecrets:
+        - name: regcred
       containers:
         - name: alexdropbox
           image: registry.alexbissessur.dev/alex-dropbox:latest
